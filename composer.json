@@ -1,0 +1,15 @@
+{
+    "name": "fauzan/employee-management",
+    "autoload": {
+        "psr-4": {
+            "EmployeeManagement\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fauzan Achmad",
+            "email": "nmeylani49@gmail.com"
+        }
+    ],
+    "require": {}
+}
