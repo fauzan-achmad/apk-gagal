@@ -1,0 +1,21 @@
+.page-loader {
+    position: fixed;
+    top: 0;
+    inset: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 10000;
+}
+
+.page-loader .page-loader-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-loader .page-loader-wrapper .spinner {
+    width: 90px;
+    height: 90px;
+}
