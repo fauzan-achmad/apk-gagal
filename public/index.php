@@ -48,10 +48,10 @@ if (!filter_var($_ENV['APP_DEBUG'], FILTER_VALIDATE_BOOL)) {
  * 
  */
 
-
 if ($page === '/') {
 
     require_once __DIR__ . '/../login.php';
 } else {
+
     require_once __DIR__ . '/../layout.php';
 }
