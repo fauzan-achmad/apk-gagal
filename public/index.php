@@ -53,5 +53,6 @@ if ($page === '/') {
 
     require_once __DIR__ . '/../login.php';
 } else {
+
     require_once __DIR__ . '/../layout.php';
 }
