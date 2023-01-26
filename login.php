@@ -1,6 +1,6 @@
 <?php
 
-use Dotenv\Dotenv;
+include 'config/connection.php';
 
 error_reporting(0);
 
@@ -47,6 +47,9 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    <div class="    " role="alert">
+        <?php echo $_SESSION['error'] ?>
+    </div>
     <div id="app">
 
         <div class="page-loader">
@@ -66,10 +69,10 @@ if (isset($_POST['submit'])) {
                             </div>
 
                             <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
+                                <form method="POST" action="" class="needs-validation" novalidate="">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" value="<?php echo $email; ?>" required autofocus>
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>
@@ -84,7 +87,7 @@ if (isset($_POST['submit'])) {
                                                 </a>
                                             </div>
                                         </div>
-                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" value="<?php echo $_POST['password']; ?>" required>
                                         <div class="invalid-feedback">
                                             please fill in your password
                                         </div>
