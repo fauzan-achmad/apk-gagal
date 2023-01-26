@@ -15,3 +15,9 @@ function asset(string $asset)
 
     return env('APP_URL') . $asset;
 }
+
+function filterRequest(mixed $request)
+{
+
+    return htmlspecialchars($request);
+}

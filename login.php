@@ -1,29 +1,51 @@
 <?php
 
-include 'config/connection.php';
+global $connection;
 
-error_reporting(0);
+if (isset($_SESSION['user'])) {
 
-session_start();
-
-if (isset($_SESSION['username'])) {
-    header("Location: berhasil_login.php");
+    header('Location:' . env('APP_URL') . '?page=dashboard');
+    die();
 }
 
-if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $row['username'];
-        header("Location: berhasil_login.php");
+if (isset($_POST['login'])) {
+    /**
+     * Mengambil email dan password dari user.
+     * 
+     */
+
+    $email = filterRequest($_POST['email']);
+    $password = filterRequest($_POST['password']);
+
+    $user = $connection->query("SELECT * FROM users WHERE email = '$email' LIMIT 1");
+    $user = $user->fetch_assoc();
+
+    if ($user) {
+
+        $checkPassword = password_verify($password, $user['password']);
+
+        if ($checkPassword) {
+            /**
+             * Jika semua berhasil.
+             * 
+             */
+
+            $_SESSION['user'] = $user;
+
+            header('Location:' . env('APP_URL') . '?page=dashboard');
+            die();
+        } else {
+
+            echo "<script> alert('Password anda salah !') </script>";
+        }
     } else {
-        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+
+        echo "<script> alert('Email anda salah !') </script>";
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +69,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <div class="    " role="alert">
-        <?php echo $_SESSION['error'] ?>
-    </div>
+
     <div id="app">
 
         <div class="page-loader">
@@ -72,7 +92,7 @@ if (isset($_POST['submit'])) {
                                 <form method="POST" action="" class="needs-validation" novalidate="">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" value="<?php echo $email; ?>" required autofocus>
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>
@@ -81,13 +101,9 @@ if (isset($_POST['submit'])) {
                                     <div class="form-group">
                                         <div class="d-block">
                                             <label for="password" class="control-label">Password</label>
-                                            <div class="float-right">
-                                                <a href="auth-forgot-password.html" class="text-small">
-                                                    Forgot Password?
-                                                </a>
-                                            </div>
+
                                         </div>
-                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" value="<?php echo $_POST['password']; ?>" required>
+                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                                         <div class="invalid-feedback">
                                             please fill in your password
                                         </div>
@@ -101,7 +117,7 @@ if (isset($_POST['submit'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                        <button type="submit" name="login" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                             Login
                                         </button>
                                     </div>

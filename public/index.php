@@ -35,6 +35,12 @@ $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 /**
+ * memuat koneksi database
+ * 
+ */
+
+require_once __DIR__ . '/../src/database/connection.php';
+/**
  * cek mode debug.
  * 
  */
@@ -53,6 +59,12 @@ if ($page === '/') {
 
     require_once __DIR__ . '/../login.php';
 } else {
-
+    if (!isset($_SESSION['users'])) {
+        /**
+         * REDIRECT / MEMINDAHKAN USERS
+         * 
+         */
+        header('Location' . env('APP_URL'));
+    }
     require_once __DIR__ . '/../layout.php';
 }

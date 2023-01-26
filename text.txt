@@ -1,0 +1,12 @@
+menambah manual data
+($name = 'Fauzan Achmad';
+$email = 'admin@employee.co.id';
+$password = password_hash('admin', PASSWORD_DEFAULT);
+
+
+$connection->query("INSERT INTO users ( name, email, password ) VALUES (
+    '$name',
+    '$email',
+    '$password'
+)");
+)
