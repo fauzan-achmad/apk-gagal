@@ -20,15 +20,15 @@
             <li class="menu-header">Menu / Item</li>
             <li class="dropdown">
                 <a href="<?php echo env('APP_URL') . '?page=presence' ?>">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas bi bi-calendar3"></i>
                     <span>Absensi</span>
                 </a>
 
             </li>
 
             <li class="dropdown">
-                <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">
-                    <i class="fas fa-columns"></i>
+                <a href="<?php echo env('APP_URL') . '?page=paid-leave' ?>">
+                    <i class="fas bi bi-calendar-minus-fill"></i>
                     <span>Cuti</span>
                 </a>
 
@@ -36,8 +36,8 @@
 
             <li class="dropdown">
                 <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">
-                    <i class="fas fa-columns"></i>
-                    <span>Laporan</span>
+                    <i class="far fa-file"></i>
+                    <span>Reports</span>
                 </a>
 
             </li>

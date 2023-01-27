@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="<?php echo asset('/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') ?>">
     <link rel="stylesheet" href="<?php echo asset('/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') ?>">
 
+    <!-- CSS ICONS -->
+    <link rel="stylesheet" href="<?php echo asset('/assets/modules/ionicons/css/ionicons.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo asset('/assets/modules/bootstrap-icons/font/bootstrap-icons.css') ?>">
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?php echo asset('/assets/css/style.min.css') ?>">
     <link rel="stylesheet" href="<?php echo asset('/assets/css/components.min.css') ?>">

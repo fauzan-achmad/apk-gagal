@@ -10,3 +10,18 @@ $connection->query("INSERT INTO users ( name, email, password ) VALUES (
     '$password'
 )");
 )
+
+foto
+
+<img src="<?= asset('/assets/img/management-employee.png') ?>" alt="logo">
+
+
+sidebar
+
+        <div class="container-flex">
+            <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>" class="logo text-center logo-light">
+                <span class="width-image-span">
+                    <img class="image-sidebar" src="<?= asset('/assets/img/management-employee.png') ?>" alt="">
+                </span>
+            </a>
+        </div>
