@@ -36,7 +36,7 @@
 
             <li class="dropdown">
                 <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">
-                    <i class="fas fa-fire"></i>
+                    <i class="fas fa-columns"></i>
                     <span>Laporan</span>
                 </a>
 
