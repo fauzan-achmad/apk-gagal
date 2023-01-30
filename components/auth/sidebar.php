@@ -1,13 +1,12 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>"><?php echo env('APP_NAME') ?> </a>
+            <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">
+                <img src="<?php echo asset('/assets/img/management-employee.png') ?>" class="sidebar-logo" alt="Logo">
+            </a>
         </div>
 
-
-
-        <ul class="sidebar-menu">
-
+        <ul class="sidebar-menu mt-5">
 
             <li class="dropdown">
                 <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">

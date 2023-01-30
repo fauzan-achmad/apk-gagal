@@ -16,6 +16,16 @@ foto
 <img src="<?= asset('/assets/img/management-employee.png') ?>" alt="logo">
 
 
+$name = 'Rakhi Azfa';
+$email = 'rakhi@employee.co.id';
+$password = password_hash('admin', PASSWORD_DEFAULT);
+
+$connection->query("INSERT INTO users ( name, email, password ) VALUES (
+    '$name',
+    '$email',
+    '$password'
+)");
+
 sidebar
 
         <div class="container-flex">

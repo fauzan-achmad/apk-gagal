@@ -1,7 +1,3 @@
-<?php
-global $connection;
-?>
-
 <div class="row">
 
     <div class="col-12">
@@ -11,7 +7,7 @@ global $connection;
                 <h4>Dashboard</h4>
             </div>
             <div class="card-body">
-                <p>Selamat datang kembali,Fauzan Achmad</p>
+                <p>Selamat datang kembali,<?php echo $_SESSION['user']['name'] ?></p>
             </div>
         </div>
         <div class="row">
