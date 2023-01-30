@@ -8,7 +8,7 @@
             <div class="page-search">
 
                 <div class="mt-3">
-                    <a href="#">Back to Home</a>
+                    <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">Back to Home</a>
                 </div>
             </div>
         </div>

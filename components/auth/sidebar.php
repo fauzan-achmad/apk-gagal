@@ -34,18 +34,19 @@
             </li>
 
             <li class="dropdown">
-                <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>">
-                    <i class="far fa-file"></i>
-                    <span>Reports</span>
-                </a>
+                <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-file"></i> <span>Reports</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=employees' ?>">Report Daily</a></li>
+                    <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=dashboard' ?>">Report Monthly</a></li>
 
+                </ul>
             </li>
 
             <li class="menu-header">Akun</li>
             <li class="dropdown">
                 <a href="<?php echo env('APP_URL') . '?page=dashboard' ?>" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-user"></i> <span>Pegawai</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=dashboard' ?>">Pegawai</a></li>
+                    <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=employees' ?>">Pegawai</a></li>
                     <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=dashboard' ?>">Akun</a></li>
                     <li><a class="nav-link" href="<?php echo env('APP_URL') . '?page=dashboard' ?>">Jabatan</a></li>
                 </ul>
